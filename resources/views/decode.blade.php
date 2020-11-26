@@ -8,7 +8,10 @@
 <body>
     
     <?php
-    var_dump($total); 
+    var_dump($total);
+    echo '<br>';
+    var_dump($idProvisioning);
+    echo '<br>';
     echo "deu certo confia!";
     ?>
 </body>

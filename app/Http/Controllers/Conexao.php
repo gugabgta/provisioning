@@ -12,26 +12,21 @@ use App\Models\SolicitacaoProvisioning;
 class Conexao extends Controller
 {
     public function view(Request $request){
-        $id = $request->id_solicitacao;
-        $whatever = new Query();
         return view('conexao',);
     }
 
     public function decode(Request $request)
     {
-        $textarea = $_GET['textarea'];
+        $problema = $_GET['textarea'];
+        $idProvisioning = $_GET['idProvisioning'];
+
         $decode = new XmlDecoder();
-        $respCode = $decode->getRespcode($textarea);
-        $total = new Query();
-        $total = $total->resolve1001('724031218049725');
-        /*
-        passo2();
-        passo3();
-        passo4();
-        passo5();
-        passo6();
-        passo7();
-        */
-        return view('decode',compact('total'));
+        $respCode = $decode->getElement($problema,'respCode');
+
+
+        $total = new Query($respCode, $idProvisioning);
+        $total = $total->resolveTudo();
+
+        return view('decode',compact('total','idProvisioning'));
     }
 }
