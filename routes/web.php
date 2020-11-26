@@ -9,4 +9,5 @@ Route::get('/', function () {
 });
 
 Route::get('/conexao/{id_solicitacao}', [Conexao::class,'whatever']);
-
+Route::get('/conexao', [Conexao::class,'view']);
+Route::get('/xmldecode', [Conexao::class,'decode']);
