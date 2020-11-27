@@ -6,11 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    
     <?php
-    var_dump($total);
-    echo '<br>';
-    var_dump($idProvisioning);
-    echo '<br>';
+    var_dump($total); 
     echo "deu certo confia!";
     ?>
 </body>

@@ -12,7 +12,7 @@ use App\Models\SolicitacaoProvisioning;
 class Conexao extends Controller
 {
     public function view(Request $request){
-        return view('conexao',);
+        return view('conexao/conexao',);
     }
 
     public function decode(Request $request)
