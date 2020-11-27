@@ -17,16 +17,15 @@ class Conexao extends Controller
 
     public function decode(Request $request)
     {
-        $problema = $_GET['textarea'];
+        $xml = $_GET['textarea'];
         $idProvisioning = $_GET['idProvisioning'];
 
         $decode = new XmlDecoder();
-        $respCode = $decode->getElement($problema,'respCode');
-
+        $respCode = $decode->getElement($xml,'respCode');
 
         $total = new Query($respCode, $idProvisioning);
         $total = $total->resolveTudo();
-
+        
         return view('decode',compact('total','idProvisioning'));
     }
 }

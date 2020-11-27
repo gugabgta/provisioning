@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    
     <?php
     var_dump($total);
     echo '<br>';

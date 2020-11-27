@@ -53,7 +53,6 @@
         height: 800px;
         width: 1700px;
         margin-left: 5px;
-        /*display: inline;*/
     }
 
     .container-esquerda {
