@@ -39,9 +39,13 @@ textarea {
     resize: none;
     width: 900px;
     height: 500px;
-    border-radius: 10px;
-    border-width: 1px;
-    box-shadow: 3px 3px 3px grey;
+    border-radius: 20px;
+    border-width: 0px;
+    box-shadow: 0px 50px 10px -45px silver;
+}
+
+.font-textarea{
+    font-family: serif;
 }
 
 #idProvisioning {
@@ -49,13 +53,8 @@ textarea {
     padding-left: 5px;
     height: 40px;
     border-radius: 5px;
-    border-width: 1px;
-    box-shadow: 3px 3px 3px grey;
-}
-
-#label_name {
-    font-family: Helvetica;
-    color: #202020;
+    border-width: 0px;
+    box-shadow: 3px 15px 8px -10px silver;
 }
 
 .logo_saitro {

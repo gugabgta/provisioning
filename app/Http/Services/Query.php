@@ -51,8 +51,56 @@ class Query
         }
     }
 
+    private function resolve13()
+    {
+        DB::update(
+            "update solicitacao_provisioning set status = 'concluido_com_sucesso' 
+            where id_solicitacao_provisioning in (
+            select id_solicitacao_provisioning 
+            from solicitacao_provisioning 
+            where status = 'concluido_com_erro')
+              and id_solicitacao_detalhe in ( 
+            select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
+        );
+        return 'Erro 13 Necessario reportar pra tim, tabela atualizada';
+    }
+
+    private function resolve14()
+    {
+        DB::update(
+            "update solicitacao_provisioning set status = 'concluido_com_sucesso' 
+            where id_solicitacao_provisioning in (
+            select id_solicitacao_provisioning 
+            from solicitacao_provisioning 
+            where status = 'concluido_com_erro')
+              and id_solicitacao_detalhe in ( 
+            select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
+        );
+        return 'Erro 14 "troca de msisdn" Necessario reportar pra tim, tabela atualizada';
+    }
+
+    private function resolve27()
+    {
+        /*nao esquece desse aqui */
+        return 'Erro 27';
+    }
+
+    private function resolve709()
+    {
+        DB::update(
+            "update solicitacao_provisioning set status = 'executar' 
+            where id_solicitacao_provisioning in (
+            select id_solicitacao_provisioning 
+            from solicitacao_provisioning 
+            where status = 'concluido_com_erro')
+              and id_solicitacao_detalhe in ( 
+            select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
+        );
+        return 'Erro 709 "executar novamente, verificação manual", tabela atualizada';
+    }
+
     private function resolve1001(){
-        /*DB::update(
+        DB::update(
             "update solicitacao_provisioning set status = 'executar'
             where id_solicitacao_provisioning in (
             select id_solicitacao_provisioning
@@ -60,21 +108,90 @@ class Query
             where status = 'concluido_com_erro') 
             and id_solicitacao_detalhe in ( 
             select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
-        );*/
-        DB::update(
-            "update solicitacao_provisioning set status = 'concluido_com_erro'
-            where id_solicitacao_provisioning =$this->id_solicitacao"
         );
-        return "resolvido 1001";
+        return "resolvido 1001, tabela atualizado";
     }
-    private function resolve13()
+
+    private function resolve1002()
     {
-        /*
         DB::update(
-            "update solicitacao_provisioning set status = 'concluido_com_sucesso'
-            where id_solicitacao_provisioning =$this->id_solicitacao"
-        );*/
-        return 'Erro 13 Necessario reportar pra tim, tabela atualizada';
+            "update solicitacao_provisioning set status = 'executar' 
+            where id_solicitacao_provisioning in (
+            select id_solicitacao_provisioning 
+            from solicitacao_provisioning 
+            where status = 'concluido_com_erro')
+              and id_solicitacao_detalhe in ( 
+            select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
+        );
+        return 'Erro 1002 "executar novamente", tabela atualizada';
+    }
+
+    private function resolve2003()
+    {
+        //voltar nesse aqui tambem
+        return 'sem solução até entao';
+    }
+
+    private function resolve3007()
+    {
+        return "I'm a teapot";
+    }
+
+    private function resolve4099()
+    {
+        DB::update(
+            "update solicitacao_provisioning set status = 'concluido_com_sucesso' 
+            where id_solicitacao_provisioning in (
+            select id_solicitacao_provisioning 
+            from solicitacao_provisioning 
+            where status = 'concluido_com_erro')
+              and id_solicitacao_detalhe in ( 
+            select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
+        );
+        return 'Erro 4009 "notificar tim", tabela atualizada';
+    }
+
+    private function resolve6000()
+    {
+        return 'erro no deadlock';
+    }
+
+    private function resolve10446()
+    {
+        DB::update(
+            "update solicitacao_provisioning set status = 'executar' 
+            where id_solicitacao_provisioning in (
+            select id_solicitacao_provisioning 
+            from solicitacao_provisioning 
+            where status = 'concluido_com_erro')
+              and id_solicitacao_detalhe in ( 
+            select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
+        );
+        return 'Erro 10446 "erro no batchjob", tabela atualizada';
+    }
+
+    private function resolve11000()
+    {
+        DB::update(
+            "update solicitacao_provisioning set status = 'executar' 
+            where id_solicitacao_provisioning in (
+            select id_solicitacao_provisioning 
+            from solicitacao_provisioning 
+            where status = 'concluido_com_erro')
+              and id_solicitacao_detalhe in ( 
+            select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
+        );
+        return 'Erro 11000 "NOT ACCEPTED COMMAND RESTRICTED DURING DUMP", tabela atualizada';
+    }
+
+    private function resolve311014()
+    {
+        return 'Necessario verificação humana... por enquanto';
+    }
+
+    private function resolve312014()
+    {
+        return 'incluir :COPYHLR,1 no final do comando de CREATE.';
     }
 
     private function getImsi(){

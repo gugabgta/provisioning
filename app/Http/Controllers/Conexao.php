@@ -21,7 +21,7 @@ class Conexao extends Controller
         $idProvisioning = $_GET['idProvisioning'];
 
         $decode = new XmlDecoder();
-        $respCode = $decode->getElement($xml,'respaaCode');
+        $respCode = $decode->getElement($xml,'respCode');
 
         $total = new Query($respCode, $idProvisioning);
         $total = $total->resolveTudo();

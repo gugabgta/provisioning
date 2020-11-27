@@ -5,7 +5,7 @@
 
 <div class="container-gustavo">
     <form action="xmldecode" method="get" id="form">
-        <textarea id="textarea" name="textarea" placeholder="XML"></textarea>
+        <textarea id="textarea" name="textarea" placeholder="XML"><div class="font-textarea"></div></textarea>
         <div class="espaco">
             <input type="text" id="idProvisioning" name="idProvisioning" placeholder="ID Provisioning">
             <button id="botao" type="submit" class="btn btn-outline-danger">Enviar</button>
