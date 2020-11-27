@@ -48,7 +48,6 @@ class Query
                 return $this->resolve311014();
             case 312014:
                 return $this->resolve312014();
-                
         }
     }
 
@@ -75,7 +74,7 @@ class Query
             "update solicitacao_provisioning set status = 'concluido_com_sucesso'
             where id_solicitacao_provisioning =$this->id_solicitacao"
         );*/
-        return 'Necessario reportar pra tim, tabela atualizada';
+        return 'Erro 13 Necessario reportar pra tim, tabela atualizada';
     }
 
     private function getImsi(){
