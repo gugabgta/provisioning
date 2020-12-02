@@ -48,6 +48,8 @@ class Query
                 return $this->resolve311014();
             case 312014:
                 return $this->resolve312014();
+            case 'test':
+                return $this->resolveTest();
         }
     }
 
@@ -199,6 +201,11 @@ class Query
                     ->select('imsi')
                     ->where('id_solicitacao_provisioning', '=', $this->id_solicitacao)
                     ->get();
+    }
+
+    public function resolveTest()
+    {
+        return 'resolvendo';
     }
 /*
     public function select(string $tabela, string $coluna = "*"): void

@@ -11,6 +11,8 @@
             <button id="botao" type="submit" class="btn btn-outline-danger">Enviar</button>
         </div>
     </form>
+
+    <img src="https://spotlights-feed.github.com/spotlights/game-off-2020/github-game-off-2020.gif" style="height: 150px; width: 250px; float: left" class="d-block width-fit mx-auto">
 </div>
 
 <script type="text/javascript" src="../resources/js/conexao.js"></script>
