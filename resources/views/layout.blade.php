@@ -30,11 +30,13 @@
             </div>
         </nav>
 
-        @yield('conteudo')
+        @yield('content')
 
     <footer>
         <img class="seta" src="/seta.png">
         <img class="logo_saitro" src="/saitro_logo_transparente.png">
     </footer>
+<style> <?php include '../resources/css/layout.css';?> </style>
 </body>
 </html>
+

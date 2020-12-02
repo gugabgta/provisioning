@@ -4,6 +4,9 @@ body {
 
 nav {
     width: 100%;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
 }
 
 .cor_do_texto {
@@ -15,47 +18,24 @@ nav {
     background: linear-gradient(0deg, rgba(253,253,253,1) 0%, rgba(0,0,0,1) 11%, rgba(45,45,45,1) 100%);  
 }
 
-.container-gustavo {
-    padding-bottom: 10px; 
-    height: 100%;
-    margin-top: 20px;
-}​
-
-.espaco {
-    position: static;
+.float-container {
+    width: 100%;
+    border: 0;
+    padding: 20px;
 }
 
-#botao {
-    top: 610px;
-    left: 235px;
-    width: 100px;
-    height: 40px;
+.left-container {
+    width: 48%;
+    float: left;
+    padding: 20px;
 }
 
-textarea {
-    padding: 10px;
-    margin-left: 20px;
-    margin-bottom: 50px;
-    resize: none;
-    width: 900px;
-    height: 500px;
-    border-radius: 20px;
-    border-width: 0px;
-    box-shadow: 0px 50px 10px -45px silver;
+.right-container {
+    width: 48%;
+    float: right;
+    padding: 20px;
 }
 
-.font-textarea{
-    font-family: serif;
-}
-
-#idProvisioning {
-    margin-left: 20px;
-    padding-left: 5px;
-    height: 40px;
-    border-radius: 5px;
-    border-width: 0px;
-    box-shadow: 3px 15px 8px -10px silver;
-}
 
 .logo_saitro {
     height: 150px;
