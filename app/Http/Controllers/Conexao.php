@@ -11,12 +11,12 @@ use App\Models\SolicitacaoProvisioning;
 
 class Conexao extends Controller
 {
-    public function view(Request $request){
-        return view('conexao/conexao',);
-    }
-
     public function decode(Request $request)
     {
+        if(!isset($_GET['textarea'])){
+            return view('conexao/conexao');
+        }
+
         $xml = $_GET['textarea'];
         $idProvisioning = $_GET['idProvisioning'];
 
@@ -26,6 +26,7 @@ class Conexao extends Controller
         $total = new Query($respCode, $idProvisioning);
         $total = $total->resolveTudo();
         
-        return view('decode',compact('total','idProvisioning'));
+        return view('conexao/conexao',compact('total','idProvisioning', 'respCode', 'xml'));    
+        
     }
 }
