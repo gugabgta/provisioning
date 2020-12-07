@@ -6,3 +6,15 @@ function mensagem() {
     console.log(form.action);
     console.log(text.value);
 }
+
+function ajax() {
+    fetch('conexao', {method = 'post'}) //retorna promise
+    .then((response) => {
+	    console.log(response.json())
+    })
+}
+console.log('ta carregando');
+document.getElementById("botao").addEventListener("click", function(event){
+    event.preventDefault()
+});
+

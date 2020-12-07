@@ -17,7 +17,7 @@ class dbConnectionTest extends TestCase
     public function testCreate()
     {
         $this->assertEquals(DB::table('solicitacao_provisioning')->insert([
-            'id_solicitacao_provisioning' => '49769', 
+            'id_solicitacao_provisioning' => '2349768', 
             'id_solicitacao_detalhe' => 0,
             'operacao_gsim' => 'migracao_tim',
             'operacao_ericsson' => 'hss_create',
@@ -40,7 +40,7 @@ class dbConnectionTest extends TestCase
             'id_solicitacao_provisioning' => '2349768'
             ]);
     }
-/*
+
     public function testUpdate()
     {
         $this->assertEquals(DB::table('solicitacao_provisioning')
@@ -53,6 +53,6 @@ class dbConnectionTest extends TestCase
         $this->assertEquals(DB::table('solicitacao_provisioning')->where(
             'id_solicitacao_provisioning', '=', '2349768')->delete(),1);
     }
-*/
+
 
 }

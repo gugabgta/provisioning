@@ -83,7 +83,7 @@ class Query
 
     private function resolve27()
     {
-        /*nao esquece desse aqui */
+        //nao esquece desse aqui
         return 'Erro 27';
     }
 
@@ -207,6 +207,7 @@ class Query
     {
         return 'resolvendo';
     }
+    
 /*
     public function select(string $tabela, string $coluna = "*"): void
     {
@@ -222,6 +223,5 @@ class Query
         72403;
         72402;
     }
-
 */
 }
