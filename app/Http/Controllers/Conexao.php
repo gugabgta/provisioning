@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\Query;
 use Illuminate\Http\Request;
+use App\Http\Services\Select;
 use App\Http\Services\XmlDecoder;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Http\Services\ProblemFinder;
 use App\Models\SolicitacaoProvisioning;
 
 class Conexao extends Controller
@@ -19,7 +19,8 @@ class Conexao extends Controller
 
     public function decode(Request $request)
     {
-        $problems = new ProblemFinder();
+        $columns = array('id_solicitacao_provisioning', 'xml_envio', 'operacao_gsim');
+        $problems = new Select($columns);
         $problems = $problems->getProblems();
         sleep(rand(1,3));
         return $problems;

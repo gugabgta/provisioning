@@ -19,6 +19,7 @@
                 <th scope="col">ID solicitacao</th>
                 <th scope="col">Erro</th>
                 <th scope="col">Operação</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody class="tbody" style="text-align: center">
