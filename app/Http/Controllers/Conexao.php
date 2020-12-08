@@ -21,7 +21,7 @@ class Conexao extends Controller
     {
         $problems = new ProblemFinder();
         $problems = $problems->getProblems();
-        
+        sleep(rand(1,3));
         return $problems;
     }
 
@@ -31,7 +31,7 @@ class Conexao extends Controller
         $id = $requestBody['idSolicitacao'];
         $solver = new Query($problema, $id);
         $msg = $solver->resolveTudo();
-
+        
         return $msg;
     }
 }
