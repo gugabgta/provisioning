@@ -973,6 +973,13 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
+=======
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+>>>>>>> 0cb7ae29061407ba4ee6d544faf47847ff6eaa15
             "time": "2020-12-03T13:47:59+00:00"
         },
         {
@@ -1470,6 +1477,13 @@
                 "parser",
                 "php"
             ],
+<<<<<<< HEAD
+=======
+            "support": {
+                "issues": "https://github.com/nikic/PHP-Parser/issues",
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.10.3"
+            },
+>>>>>>> 0cb7ae29061407ba4ee6d544faf47847ff6eaa15
             "time": "2020-12-03T17:45:45+00:00"
         },
         {
@@ -1975,6 +1989,13 @@
                 "interactive",
                 "shell"
             ],
+<<<<<<< HEAD
+=======
+            "support": {
+                "issues": "https://github.com/bobthecow/psysh/issues",
+                "source": "https://github.com/bobthecow/psysh/tree/v0.10.5"
+            },
+>>>>>>> 0cb7ae29061407ba4ee6d544faf47847ff6eaa15
             "time": "2020-12-04T02:51:30+00:00"
         },
         {
@@ -5582,6 +5603,23 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
+=======
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/phpunit/issues",
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.0"
+            },
+            "funding": [
+                {
+                    "url": "https://phpunit.de/donate.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+>>>>>>> 0cb7ae29061407ba4ee6d544faf47847ff6eaa15
             "time": "2020-12-04T05:05:53+00:00"
         },
         {

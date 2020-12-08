@@ -13,8 +13,8 @@ function ajax() {
 function resolve(element){
     
     let pai = $('#row'+element[0])
-    let erro = element[1];
-    let idSolicitacao = element[2];
+    let erro = element[2];
+    let idSolicitacao = element[1];
     
     if(deveRemover(erro)){
         pai.attr('style', 'display: none')
@@ -31,15 +31,14 @@ function resolve(element){
         $('.copy-to-clipboard').attr('hidden', false)
         $('copy-to-clipboard').on('click', copyToClipboard('.response'))
     });
-    
 }
 
 function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
+    var $temp = $("<input>")
+    $("body").append($temp)
+    $temp.val($(element).text()).select()
+    document.execCommand("copy")
+    $temp.remove()
 }
 
 function message(message){
@@ -48,29 +47,51 @@ function message(message){
 }
 
 function createRows(data){
-    var myList = $('.tbody');
-    for(let i = 0; i < data.length; i++){
+    var myList = $('.tbody')
+    let i = 0
+    for(element of data){
         let tableRow = $('<tr>');
         tableRow.addClass('linha')
         tableRow.attr('id','row'+i)
-        let tableId = $('<td>').text(data[i].id_solicitacao_provisioning);
-        let tableErro = $('<td>').text(data[i].xml_envio)
-        let tableNumero = $('<th>').text(i+1) 
+        let tableId = $('<td>').text(element.id_solicitacao_provisioning)
+        let tableErro = $('<td>').text(element.xml_envio)
+        let tableOperacao = $('<td>').text(element.operacao_gsim)
+        let tableNumero = $('<th>').text(i+1)
         let tableIcon = $('<th>')
         let icon = $('<button>')
-        let elements = [i, data[i].xml_envio, data[i].id_solicitacao_provisioning]
         icon.addClass('send-button')
         icon.attr('id',i)
-        console.log(elements)
-        icon.attr('onclick','resolve([' + elements + '])')
-        icon.text('Solucionar')
+
+        let values = getAllElementValuesAsString(Object.entries(element))
+
+        icon.attr('onclick','resolve([' + i + ',' + values + '])')
+        console.log(icon.attr('onclick'))
+        icon.text('Solução')
         tableIcon.append(icon)
         tableRow.append(tableNumero)
         tableRow.append(tableId)
         tableRow.append(tableErro)
+        tableRow.append(tableOperacao)
         tableRow.append(tableIcon)
         myList.append(tableRow)
+        i++
     }
+}
+
+function getAllElementValuesAsString(element){
+    let array = []
+    let i = 0
+    for(key of element){
+        if(typeof(key[1]) == 'string'){
+            array[i] = "'" + key[1] + "'"
+        }
+        else{
+            array[i] = key[1]
+        }
+        i++
+    }
+    array.join(',')
+    return array;
 }
 
 function deveRemover(erro){
