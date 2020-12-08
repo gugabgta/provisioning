@@ -6,7 +6,7 @@ use DOMDocument;
 
 class XmlDecoder
 {
-    public function getElement($xml,$element){
+    public static function getElement($xml,$element){
         if(strpos($xml, 'b"') === 0){
             $xml = str_replace('\"', '"', substr($xml, 2, -1));
         }

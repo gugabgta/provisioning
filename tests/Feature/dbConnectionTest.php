@@ -9,7 +9,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class dbConnectionTest extends TestCase
 {
-    public $xml = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cai3="http://schemas.ericsson.com/cai3g1.2/" xmlns:ns="http://schemas.ericsson.com/ema/UserProvisioning/TIMHSSEPS/1.0/"><soapenv:Header><cai3:SequenceId/><cai3:TransactionId/><cai3:SessionId>%s</cai3:SessionId></soapenv:Header><soapenv:Body><cai3:Create><cai3:MOType>TIMHSSEPS@http://schemas.ericsson.com/ema/UserProvisioning/TIMHSSEPS/1.0/</cai3:MOType><cai3:MOId><ns:msisdn>5519953280507</ns:msisdn><ns:imsi>724549000050957</ns:imsi></cai3:MOId><cai3:MOAttributes><ns:createSubscription imsi="724549000050957" msisdn="5519953280507"><ns:msisdn>5519953280507</ns:msisdn><ns:imsi>724549000050957</ns:imsi><ns:hssEps><ns:msisdn>5519953280507</ns:msisdn><ns:imsi>724549000050957</ns:imsi><ns:epsIndividualDefaultContextId>1</ns:epsIndividualDefaultContextId><ns:epsIndividualContextId>1</ns:epsIndividualContextId><ns:epsIndividualContextId>496,DEF</ns:epsIndividualContextId></ns:hssEps><ns:copyHlr>1</ns:copyHlr></ns:createSubscription></cai3:MOAttributes></cai3:Create></soapenv:Body></soapenv:Envelope>';
+    public $xml1001 = 'b"<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S="a"><ema:a xmlns:ema="a"><ema:respCode>1001</ema:respCode></ema:a></S:Envelope>"';
+    public $xml1002 = 'b"<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S="a"><ema:a xmlns:ema="a"><ema:respCode>1002</ema:respCode></ema:a></S:Envelope>"';
+    public $xml13 = 'b"<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S="a"><ema:a xmlns:ema="a"><ema:respCode>13</ema:respCode></ema:a></S:Envelope>"';
+    public $xml14 = 'b"<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S="a"><ema:a xmlns:ema="a"><ema:respCode>14</ema:respCode></ema:a></S:Envelope>"';
 
     public function testCreate()
     {
@@ -18,14 +21,14 @@ class dbConnectionTest extends TestCase
             'id_solicitacao_detalhe' => 0,
             'operacao_gsim' => 'migracao_tim',
             'operacao_ericsson' => 'hss_create',
-            'status' => 'finalizado',
+            'status' => 'concluido_com_erro',
             'dt_criacao' => new \DateTimeImmutable('now'),
             'dt_agendamento' => new \DateTimeImmutable('+10 days'),
             'dt_cancelamento' => null,
             'id_simcard_vinculo' => 2349768,
             'msisdn' => 5519953286969,
             //'ismi' => 724549000056969,
-            'xml_envio' => $this->xml,
+            'xml_envio' => $this->xml14,
             'dt_conclusao' => new \DateTimeImmutable('+20 days'),
             'id_simcard' => 2349768
         ]),1);
@@ -33,13 +36,11 @@ class dbConnectionTest extends TestCase
 
     public function testRead()
     {
-    
         $this->assertDatabaseHas('solicitacao_provisioning',[
             'id_solicitacao_provisioning' => '2349768'
             ]);
-
     }
-/*
+
     public function testUpdate()
     {
         $this->assertEquals(DB::table('solicitacao_provisioning')
@@ -52,6 +53,6 @@ class dbConnectionTest extends TestCase
         $this->assertEquals(DB::table('solicitacao_provisioning')->where(
             'id_solicitacao_provisioning', '=', '2349768')->delete(),1);
     }
-*/
+
 
 }

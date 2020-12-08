@@ -83,7 +83,7 @@ class Query
 
     private function resolve27()
     {
-        /*nao esquece desse aqui */
+        //nao esquece desse aqui
         return 'Erro 27';
     }
 
@@ -106,12 +106,12 @@ class Query
             "update solicitacao_provisioning set status = 'executar'
             where id_solicitacao_provisioning in (
             select id_solicitacao_provisioning
-            from solicitacao_provisioning 
-            where status = 'concluido_com_erro') 
-            and id_solicitacao_detalhe in ( 
+            from solicitacao_provisioning
+            where status = 'concluido_com_erro')
+            and id_solicitacao_detalhe in (
             select id_solicitacao_detalhe from solicitacao_detalhe where id_solicitacao = $this->id_solicitacao)"
         );
-        return "resolvido 1001, tabela atualizado";
+        return "resolvido 1001, tabela atualizada";
     }
 
     private function resolve1002()
@@ -207,6 +207,7 @@ class Query
     {
         return 'resolvendo';
     }
+    
 /*
     public function select(string $tabela, string $coluna = "*"): void
     {
@@ -222,6 +223,5 @@ class Query
         72403;
         72402;
     }
-
 */
 }
