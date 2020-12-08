@@ -39,4 +39,3 @@
 <style> <?php include '../resources/css/layout.css';?> </style>
 </body>
 </html>
-
