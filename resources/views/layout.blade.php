@@ -34,10 +34,11 @@
         </div>
     </nav>
 
-    @yield('content')
-
+    <div class="container_conteudo">
+        @yield('content')
+    </div>
+    
     <footer>
-        <img class="seta" src="/seta.png">
         <img class="logo_saitro" src="/saitro_logo_transparente.png">
     </footer>
 </body>
